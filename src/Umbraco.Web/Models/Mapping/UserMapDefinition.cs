@@ -164,9 +164,10 @@ namespace Umbraco.Web.Models.Mapping
             MapUserGroupBasic(target, source.AllowedSections, source.StartContentId, source.StartMediaId, context.Mapper);
         }
 
-        // Umbraco.Code.MapAll -Udi -Trashed -AdditionalData -Id -AssignedPermissions
+        // Umbraco.Code.MapAll -Udi -Trashed -AdditionalData -AssignedPermissions
         private void Map(IUserGroup source, AssignedUserGroupPermissions target, MapperContext context)
         {
+            target.Id = source.Id;
             target.Alias = source.Alias;
             target.Icon = source.Icon;
             target.Key = source.Key;
